@@ -34,3 +34,21 @@ pip install git+https://www.github.com/keras-team/keras-contrib.git
 ```
 mkdir results
 ```
+
+***
+
+## About the execution modes
+
+**A) Train mode**
+
+* Vanilla execution mode
+* Images will be loaded, and the generator and discriminator networks will be trained
+* Generator will generate images from the given input, discriminator will distinguish between real and fake images
+* The adversarial model is responsible for reaching an optimum value of the objective function
+* After every epoch, the weights are updated to tune both the networks to reach maximum efficiency.
+
+**B) Predict mode**
+
+* The discriminator network isn't involved here - only the weights of the generator network are loaded, and the generator network is trained
+* The generator generates images for the input images it is provided
+* No networks are optimized, the generator just generates images for the entire batch of inputs.
